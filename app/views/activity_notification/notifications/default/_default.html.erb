@@ -2,7 +2,7 @@
   <% if notification.notifiable.present? %>
     <div class='notification_list <%= notification.opened? ? "opened" : "unopened" %>'>
       <div class="notification_list_cover"></div>
-      <div class="list_image"></div>
+      <div class="list_image" style="background-image:url(<%= notification.notifier.profile_picture.url %>); background-size:cover;"></div>
       <div class="list_text_wrapper">
         <p class="list_text">
           <strong><%= notification.notifier.present? ? notification.notifier.printable_notifier_name : "Someone" %></strong>
@@ -144,6 +144,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #979797;
+    border-radius: 50%;
   }
 
   .notification_list .list_text_wrapper {
